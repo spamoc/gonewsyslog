@@ -1,4 +1,4 @@
-package gosyslog
+package gonewsyslog
 
 import "github.com/spamoc/gonewsyslog/internal/rotate"
 

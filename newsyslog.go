@@ -68,7 +68,7 @@ func walk(paths []string, ctx context.Context) []conf.ProjectConfig {
 func createJobs(projects []conf.ProjectConfig, ctx context.Context) ([]rotate.RotateJob, error) {
 	jobs := make([]rotate.RotateJob, 0)
 	for _, p := range projects {
-		job, err := gosyslog.New(p.Name, p.From, p.To, string(p.Compress.Type), p.Compress.Ext, p.Success, p.Failed, p.Pid, p.Rotate.Term, p.Rotate.Size, p.Rotate.Count)
+		job, err := gonewsyslog.New(p.Name, p.From, p.To, string(p.Compress.Type), p.Compress.Ext, p.Success, p.Failed, p.Pid, p.Rotate.Term, p.Rotate.Size, p.Rotate.Count)
 		if err != nil {
 			return make([]rotate.RotateJob, 0), err
 		}
