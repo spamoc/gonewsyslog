@@ -1,0 +1,19 @@
+[common]
+include="/etc/gosyslog.d/*.conf"
+
+[[project]]
+
+name = "postgresql-syslog"
+from = "/var/log/postgresql/postgresql.log"
+to = "/var/log/postgresql/postgresql-20060102-150405.log"
+pid = "/var/run/syslogd.pid"
+#success = "/bin/kill -HUP `cat /var/run/syslogd.pid`"
+
+  [project.rotate]
+#  term="24"# rotate per n hours: 1-9999, 
+#  size="100KB"
+  count=2
+
+  [project.compress]
+  type = "gzip" # gzip/bzip/xz/none
+  ext = ".gz"

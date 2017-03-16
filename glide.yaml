@@ -1,0 +1,8 @@
+package: github.com/spamoc/gonewsyslog
+import:
+- package: github.com/BurntSushi/toml
+  version: ^0.2.0
+- package: go.uber.org/zap
+  version: ^1.0.0
+  subpackages:
+  - zapcore
